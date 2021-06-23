@@ -43,6 +43,8 @@ ucase-1-view-account-a
 
 # Step 03.1: Install kv_storage.wasm contract - wait until pending deploys = 0.
 ucase-1-step-3-set-contract
+sleep 10.0
+nctl-view-chain-deploy
 
 # Step 03.2: Set contract hash memo.
 ucase-1-step-3-set-contract-hash

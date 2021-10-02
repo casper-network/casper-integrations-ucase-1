@@ -1,3 +1,41 @@
+## associate-registrar
+### deploying argument:
+
+- "partners" : CLType::List(Box::new(CLType::PublicKey))
+
+### endpoints
+
+- "register" : 
+    - "associate_public_key", CLType::Key,
+    - "associate_type", CLType::U32,
+
+- "unregister" : 
+    - "associate_public_key", CLType::Key,
+
+- "get_caller_association":
+    - No arguments
+    - returns an u32
+
+- "get_associate_type": 
+    - "associate_public_key", CLType::Key
+    - returns an u32
+
+## document-notarizer
+### deploying argument:
+
+- "registrar" : CLType::Key (package hash of the registrar contract)
+
+### endpoints
+
+- "notarize_document" : 
+    - "document_hash", CLType::Key,
+    - "document_meta", CLType::List(Box::new(CLType::String)),
+
+- "get_document_meta" : 
+    - "document_hash", CLType::Key,
+    - returns a CLType::List(Box::new(CLType::String)),
+
+
 ## Make commands
 ### prepare
 Adds wasm to the cargo compilation targets.

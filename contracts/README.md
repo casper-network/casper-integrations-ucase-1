@@ -6,18 +6,18 @@
 ### endpoints
 
 - "register" : 
-    - "associate_public_key", CLType::Key,
+    - "associate_public_key", CLType::PublicKey,
     - "associate_type", CLType::U32,
 
 - "unregister" : 
-    - "associate_public_key", CLType::Key,
+    - "associate_public_key", CLType::PublicKey,
 
 - "get_caller_association":
     - No arguments
     - returns an u32
 
 - "get_associate_type": 
-    - "associate_public_key", CLType::Key
+    - "associate_public_key", CLType::PublicKey
     - returns an u32
 
 ## document-notarizer
@@ -28,11 +28,11 @@
 ### endpoints
 
 - "notarize_document" : 
-    - "document_hash", CLType::Key,
+    - "document_hash", CLType::Key, (only Key::Hash type accepted)
     - "document_meta", CLType::List(Box::new(CLType::String)),
 
 - "get_document_meta" : 
-    - "document_hash", CLType::Key,
+    - "document_hash", CLType::Key, (only Key::Hash type accepted)
     - returns a CLType::List(Box::new(CLType::String)),
 
 

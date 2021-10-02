@@ -127,7 +127,7 @@ fn get_entry_points() -> EntryPoints {
     eps.add_entry_point(EntryPoint::new(
         "register",
         vec![
-            Parameter::new("associate_public_key", CLType::Key),
+            Parameter::new("associate_public_key", CLType::PublicKey),
             Parameter::new("associate_type", CLType::U32),
         ],
         CLType::Unit,
@@ -136,7 +136,7 @@ fn get_entry_points() -> EntryPoints {
     ));
     eps.add_entry_point(EntryPoint::new(
         "unregister",
-        vec![Parameter::new("associate_public_key", CLType::Key)],
+        vec![Parameter::new("associate_public_key", CLType::PublicKey)],
         CLType::Unit,
         EntryPointAccess::Public,
         casper_types::EntryPointType::Contract,
@@ -150,7 +150,7 @@ fn get_entry_points() -> EntryPoints {
     ));
     eps.add_entry_point(EntryPoint::new(
         "get_associate_type",
-        vec![Parameter::new("associate_public_key", CLType::Key)],
+        vec![Parameter::new("associate_public_key", CLType::PublicKey)],
         CLType::U32,
         EntryPointAccess::Public,
         casper_types::EntryPointType::Contract,

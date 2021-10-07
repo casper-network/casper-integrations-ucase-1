@@ -1,2 +1,5 @@
 outputs/
 tmp/
+target/
+Cargo.lock
+*.wasm

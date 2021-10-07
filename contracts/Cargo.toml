@@ -1,0 +1,11 @@
+[workspace]
+
+members = [
+	"tests",
+    "associate-registrar",
+    "document-notarizer",
+    "test-contracts"
+]
+
+[profile.release]
+lto = true
